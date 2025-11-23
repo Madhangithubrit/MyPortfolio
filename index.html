@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Madhankumar M - UI/UX Designer Portfolio. Creating intuitive and impactful digital experiences. Check out my design projects, skills, and services.">
+    <meta name="theme-color" content="#7c3aed">
+    <meta property="og:title" content="Madhankumar M - UI/UX Designer Portfolio">
+    <meta property="og:description" content="Passionate UI/UX Designer crafting meaningful digital experiences">
     <title>Madhankumar M - UI/UX Designer Portfolio</title>
     <style>
         * {
@@ -10,7 +14,6 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #1e0a3c 0%, #2d1b4e 50%, #3a2667 100%);
@@ -67,13 +70,14 @@
             transform: translateY(-2px);
         }
 
-        /* Mobile menu toggle */
         .menu-toggle {
             display: none;
             flex-direction: column;
             cursor: pointer;
             gap: 5px;
             z-index: 1002;
+            background: none;
+            border: none;
         }
 
         .menu-toggle span {
@@ -173,6 +177,7 @@
             border: 5px solid rgba(167, 139, 246, 0.3);
             animation: float 2s ease-in-out infinite;
             object-fit: cover;
+            background: rgba(255, 255, 255, 0.05);
         }
 
         .blob {
@@ -232,6 +237,7 @@
             border: 5px solid rgba(167, 139, 246, 0.3);
             animation: float 2s ease-in-out infinite;
             object-fit: cover;
+            background: rgba(255, 255, 255, 0.05);
         }
 
         .about-text {
@@ -254,6 +260,7 @@
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s;
+            opacity: 0;
         }
 
         .skill-card:hover {
@@ -272,12 +279,6 @@
             justify-content: center;
             font-size: 24px;
             margin-bottom: 20px;
-        }
-
-        .skill-icon img {
-            width: 30px;
-            height: 30px;
-            object-fit: contain;
         }
 
         .skill-card h3 {
@@ -305,6 +306,7 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s;
             cursor: pointer;
+            opacity: 0;
         }
 
         .project-card:hover {
@@ -326,6 +328,14 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        .project-image a {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .project-info {
@@ -370,6 +380,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            opacity: 0;
         }
 
         .service-card:hover {
@@ -390,12 +401,11 @@
             color: #fff;
             box-shadow: 0 8px 24px rgba(124,58,237,0.18);
         }
-
         .service-icon img {
-            width: 35px;
-            height: 35px;
-            object-fit: contain;
-        }
+                width: 35px;
+                height: 35px;
+                object-fit: contain;
+            }
 
         .service-card h3 {
             margin-bottom: 15px;
@@ -427,6 +437,7 @@
             z-index: 999;
             opacity: 0;
             pointer-events: none;
+            padding: 0;
         }
 
         #scrollTopBtn.visible {
@@ -469,8 +480,11 @@
             color: #fff;
             font-size: 18px;
             transition: all 0.3s;
-            word-break: break-all;
         }
+        .hero p {
+    text-align: justify;
+}
+
 
         .contact-btn:hover {
             transform: translateY(-3px);
@@ -496,13 +510,13 @@
             text-decoration: none;
             color: #fff;
             transition: all 0.3s;
+            
         }
-
-        .social-links a img {
-            width: 25px;
-            height: 25px;
-            object-fit: contain;
-        }
+         .social-links a img {
+                width: 25px;
+                height: 25px;
+                object-fit: contain;
+            }
 
         .social-links a:hover {
             background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
@@ -515,6 +529,51 @@
             color: #d1c4e9;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
+        /* Common button styles */
+.email-btn, .gmail-btn {
+    display: inline-block;
+    padding: 12px 22px;
+    margin: 8px 0;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+/* Primary button (mobile) */
+.email-btn {
+    background: #7c3aed;
+    color: white;
+    box-shadow: 0 4px 10px rgba(124, 58, 237, 0.3);
+}
+.email-btn:hover {
+    background: #6d28d9;
+}
+
+/* Secondary button (desktop) */
+.gmail-btn {
+    background: #7c3aed;
+    color: #eceff0;
+    border: 2px solid #7c3aed;
+}
+.gmail-btn:hover {
+    background: #cbc5d6;
+    color: black;
+}
+/* Visibility rules */
+.mobile-only { display: none; }
+.desktop-only { display: none; }
+
+/* Show mobile-only button below 768px (phones/tablets) */
+@media (max-width: 768px) {
+    .mobile-only { display: inline-block; }
+}
+
+/* Show desktop-only button above 768px (laptops/desktops) */
+@media (min-width: 769px) {
+    .desktop-only { display: inline-block; }
+}
 
         @keyframes fadeInUp {
             from {
@@ -551,7 +610,6 @@
             }
         }
 
-        /* Tablet Responsive */
         @media (max-width: 1024px) {
             nav {
                 padding: 20px 40px;
@@ -584,7 +642,6 @@
             }
         }
 
-        /* Mobile Responsive */
         @media (max-width: 768px) {
             nav {
                 padding: 15px 20px;
@@ -635,19 +692,6 @@
 
             .resume-btn {
                 display: none;
-            }
-
-            /* Hamburger animation */
-            .menu-toggle.active span:nth-child(1) {
-                transform: translateY(8px) rotate(45deg);
-            }
-
-            .menu-toggle.active span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .menu-toggle.active span:nth-child(3) {
-                transform: translateY(-8px) rotate(-45deg);
             }
 
             .hero {
@@ -750,7 +794,6 @@
             }
         }
 
-        /* Small Mobile */
         @media (max-width: 480px) {
             .logo {
                 font-size: 20px;
@@ -794,11 +837,11 @@
     <nav>
         <div class="logo">MK</div>
 
-        <div class="menu-toggle" id="menuToggle">
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
             <span></span>
             <span></span>
             <span></span>
-        </div>
+        </button>
 
         <ul class="nav-links" id="navLinks">
             <li><a href="#home">Home</a></li>
@@ -807,9 +850,10 @@
             <li><a href="#projects">Projects</a></li>
             <li><a href="#service">Service</a></li>
             <li><a href="#contact">Contact</a></li>
+            
         </ul>
 
-        <a href="My Resume.pdf" class="resume-btn">My Resume</a>
+        <a href="My Resume.pdf" class="resume-btn" aria-label="Download Resume">My Resume</a>
     </nav>
 
     <div class="blob blob1"></div>
@@ -819,14 +863,14 @@
         <div class="hero-content">
             <h1>Madhankumar M</h1>
             <h2>UI/UX Designer</h2>
-            <p>I'm a passionate UI/UX Designer eager to craft digital products that are both meaningful for users and impactful for businesses. My focus is on creating intuitive, user-friendly interfaces and experiences that go beyond aesthetics to solve real problems.</p>
+            <p>I’m a passionate UI/UX Designer dedicated to crafting digital products that are both meaningful for users and impactful for businesses. With a strong focus on user-centered design, I strive to create intuitive, accessible, and visually engaging experiences that solve real-world problems through thoughtful research and design strategy. My approach blends creativity with analytical thinking — from understanding user behavior and needs to translating insights into wireframes, prototypes, and polished interfaces that enhance usability and delight. I’m eager to collaborate with cross-functional teams to build products that not only look great but also deliver measurable value and a seamless user experience.</p>
             <div class="hero-buttons">
-                <a href="https://www.linkedin.com/in/madhankumar-m-40035b250/" class="btn btn-primary">LinkedIn</a>
-                <a href="https://www.behance.net/madhankumarm7" class="btn btn-secondary">Behance</a>
+                <a href="https://www.linkedin.com/in/madhankumar-m-40035b250/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://www.behance.net/madhankumarm7" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Behance</a>
             </div>
         </div>
         <div class="hero-image">
-            <img src="My Image.png" alt="Madhankumar M Profile">
+            <img src="My Image.png" alt="Madhankumar M - UI/UX Designer Profile Picture" loading="lazy">
         </div>
     </section>
 
@@ -834,10 +878,10 @@
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
             <div class="about-image">
-                <img src="My Image.png" alt="About Madhankumar M">
+                <img src="My Image.png" alt="Madhankumar M - About" loading="lazy">
             </div>
             <div class="about-text">
-                <p>I'm an aspiring UI/UX Designer passionate about creating digital experiences that are both intuitive and impactful. My approach is grounded in user-centered design principles, with a strong interest in aligning design solutions to real user needs and business goals. As a fresher, I'm eager to learn, grow, and contribute to meaningful projects. Outside of design, I love exploring new trends, engaging with the design community, and working on personal projects that allow me to experiment and innovate.</p>
+                <p>I'm an aspiring UI/UX Designer passionate about creating digital experiences that are both intuitive and impactful. My approach is grounded in user-centered design principles, with a strong interest in aligning design solutions to real user needs and business goals. As a fresher, I'm eager to learn, grow, and contribute to meaningful projects. Outside of design, I love exploring new trends, engaging with the design community, and working on personal projects that allow me to experiment and innovate with cutting-edge design solutions.</p>
             </div>
         </div>
     </section>
@@ -846,46 +890,34 @@
         <h2 class="section-title">Skills</h2>
         <div class="skills-grid">
             <div class="skill-card">
-                <div class="skill-icon">
-                    <img src="SL1.png" alt="Visual Design">
-                </div>
+                <div class="skill-icon"><img src="SL1.png" alt="Visual Design"></div>
                 <h3>Visual Design</h3>
-                <p>Designing modern, eye-catching interfaces with attention to color, typography, color, and spacing.</p>
+                <p>Designing modern, eye-catching interfaces with attention to color, typography, and spacing for maximum visual impact.</p>
             </div>
             <div class="skill-card">
-                <div class="skill-icon">
-                    <img src="SL2.png" alt="User Interface">
-                </div>
+                <div class="skill-icon"><img src="SL2.png" alt="User Interface"></div>
                 <h3>User Interface</h3>
-                <p>Designing intuitive wireframes and digital layouts naturally through their journey.</p>
+                <p>Crafting intuitive wireframes and digital layouts that guide users naturally through their journey.</p>
             </div>
             <div class="skill-card">
-                <div class="skill-icon">
-                    <img src="SL3.png" alt="UX Research">
-                </div>
+                <div class="skill-icon"><img src="SL3.png" alt="UX Research"></div>
                 <h3>UX Research</h3>
-                <p>Understanding user needs through research and data-driven insights.</p>
+                <p>Understanding user needs through comprehensive research and data-driven insights for informed design decisions.</p>
             </div>
             <div class="skill-card">
-                <div class="skill-icon">
-                    <img src="SL4.png" alt="Prototyping">
-                </div>
+                <div class="skill-icon"><img src="SL4.png" alt="Prototyping"></div>
                 <h3>Prototyping</h3>
-                <p>Building interactive prototypes to validate ideas and gather feedback early.</p>
+                <p>Building interactive prototypes to validate ideas and gather user feedback early in the design process.</p>
             </div>
             <div class="skill-card">
-                <div class="skill-icon">
-                    <img src="SL5.png" alt="Design Systems">
-                </div>
+                <div class="skill-icon"><img src="SL5.png" alt="Design Systems"></div>
                 <h3>Design Systems</h3>
-                <p>Developing scalable design systems that maintain consistency across platforms.</p>
+                <p>Developing scalable design systems that maintain consistency and improve efficiency across all platforms.</p>
             </div>
             <div class="skill-card">
-                <div class="skill-icon">
-                    <img src="SL6.png" alt="Design Tools">
-                </div>
+                <div class="skill-icon"><img src="SL6.png" alt="Design Tools"></div>
                 <h3>Design Tools</h3>
-                <p>Proficient in Figma, Photoshop and modern design tools.</p>
+                <p>Proficient in Figma, Adobe Creative Suite, and modern design tools for creating professional designs.</p>
             </div>
         </div>
     </section>
@@ -895,137 +927,138 @@
         <div class="projects-grid">
             <div class="project-card">
                 <div class="project-image">
-                    <a href="https://www.figma.com/design/ZVXmtTm6y4NDFOT5lyLI15/EV-Charging-slot-Booking-App?m=auto&t=BIUcK9eezGqSoGdK-6" title="EV App">
-                        <img src="EV App Image.png" alt="EV Charging Station App">
+                    <a href="https://www.figma.com/design/ZVXmtTm6y4NDFOT5lyLI15/EV-Charging-slot-Booking-App?m=auto&t=BIUcK9eezGqSoGdK-6" title="EV Charging Station App" target="_blank" rel="noopener noreferrer">
+                        <img src="EV App Image.png" alt="EV Charging Station App - Mobile Design" loading="lazy">
                     </a>
                 </div>
                 <div class="project-info">
                     <div class="project-tag">MOBILE DESIGN</div>
-                    <h3>EV Charging Station Slot Booking App UI Design</h3>
-                    <p>An app that helps EV owners find nearby charging stations, see available slots, and book a time to charge their vehicle easily.</p>
+                    <h3>EV Charging Station Slot Booking App</h3>
+                    <p>An app that helps EV owners find nearby charging stations, view available slots, and book charging times with ease. Features real-time availability and user-friendly navigation.</p>
                 </div>
             </div>
+
             <div class="project-card">
                 <div class="project-image">
-                    <a href="https://www.figma.com/design/9TiNYf0fKDSOWrqbLW33Ou/Smart-Home-Automation?m=auto&t=BIUcK9eezGqSoGdK-6" title="SHA">
-                        <img src="SHA Image.png" alt="Smart Home Automation">
+                    <a href="https://www.figma.com/design/9TiNYf0fKDSOWrqbLW33Ou/Smart-Home-Automation?m=auto&t=BIUcK9eezGqSoGdK-6" title="Smart Home Automation" target="_blank" rel="noopener noreferrer">
+                        <img src="SHA Image.png" alt="Smart Home Automation - Web Design" loading="lazy">
                     </a>
                 </div>
                 <div class="project-info">
                     <div class="project-tag">WEB DESIGN</div>
                     <h3>Smart Home Automation UI Design</h3>
-                    <p>A user-friendly VR Model Design Smart Home Automation platform for visualizing, controlling, and managing home devices in an immersive 3D environment with secure connectivity and an intuitive interface.</p>
+                    <p>A comprehensive smart home platform for visualizing, controlling, and managing home devices with secure connectivity and an intuitive interface.</p>
                 </div>
             </div>
+
             <div class="project-card">
                 <div class="project-image">
-                    <a href="https://www.figma.com/design/JWHkXie5Fx5AxqsMTsYkkM/Crypto-Vault-App?m=auto&t=BIUcK9eezGqSoGdK-6" title="Crypto App">
-                        <img src="Crypto App Image.png" alt="Crypto Vault App">
+                    <a href="https://www.figma.com/design/JWHkXie5Fx5AxqsMTsYkkM/Crypto-Vault-App?m=auto&t=BIUcK9eezGqSoGdK-6" title="Crypto Vault App" target="_blank" rel="noopener noreferrer">
+                        <img src="Crypto App Image.png" alt="Crypto Vault App - Mobile Design" loading="lazy">
                     </a>
                 </div>
                 <div class="project-info">
                     <div class="project-tag">MOBILE DESIGN</div>
                     <h3>Crypto Vault App UI Design</h3>
-                    <p>A user-friendly Crypto Wallet platform for discovering, buying, and selling digital collectibles with secure transactions and an intuitive interface</p>
+                    <p>A secure cryptocurrency wallet platform for discovering, buying, and selling digital assets with encrypted transactions and user-friendly interface.</p>
                 </div>
             </div>
+
             <div class="project-card">
                 <div class="project-image">
-                    <a href="https://www.figma.com/design/Z57GDmMEcVjJN0MK2p2QoQ/Healthcare-Management?m=auto&t=BIUcK9eezGqSoGdK-6" title="HMD">
-                        <img src="HMD Image.png" alt="Healthcare Management Dashboard">
+                    <a href="https://www.figma.com/design/Z57GDmMEcVjJN0MK2p2QoQ/Healthcare-Management?m=auto&t=BIUcK9eezGqSoGdK-6" title="Healthcare Management Dashboard" target="_blank" rel="noopener noreferrer">
+                        <img src="HMD Image.png" alt="Healthcare Management Dashboard - Web Design" loading="lazy">
                     </a>
                 </div>
                 <div class="project-info">
                     <div class="project-tag">WEB DESIGN</div>
                     <h3>Healthcare Management Dashboard UI Design</h3>
-                    <p>Comprehensive dashboard for healthcare professionals to manage patient data effectively, User-friendly healthcare application for appointment booking and medical records.</p>
+                    <p>Comprehensive dashboard enabling healthcare professionals to manage patient data, schedule appointments, and maintain medical records efficiently.</p>
                 </div>
             </div>
+
             <div class="project-card">
                 <div class="project-image">
-                    <a href="https://www.figma.com/design/XeZy4YLIF9xZpzgmkLYtto/ChatApp?m=auto&t=BIUcK9eezGqSoGdK-6" title="ChatApp">
-                        <img src="ChatApp Image.png" alt="Chat App">
+                    <a href="https://www.figma.com/design/XeZy4YLIF9xZpzgmkLYtto/ChatApp?m=auto&t=BIUcK9eezGqSoGdK-6" title="Chat App" target="_blank" rel="noopener noreferrer">
+                        <img src="ChatApp Image.png" alt="Chat App - Mobile Design" loading="lazy">
                     </a>
                 </div>
                 <div class="project-info">
                     <div class="project-tag">MOBILE DESIGN</div>
                     <h3>ChatApp UI Design</h3>
-                    <p>Designed a modern chat app with intuitive navigation, real-time messaging, and a seamless user experience.</p>
+                    <p>Modern chat application featuring intuitive navigation, real-time messaging capabilities, and a seamless user experience for instant communication.</p>
                 </div>
             </div>
+
             <div class="project-card">
                 <div class="project-image">
-                    <a href="https://www.figma.com/design/uq9VWaQ5NWrA0os0XxUDvw/E-Commerce-Website?m=auto&t=BIUcK9eezGqSoGdK-6" title="E-Comm">
-                        <img src="E-Comm Image.png" alt="E-Commerce Website">
+                    <a href="https://www.figma.com/design/uq9VWaQ5NWrA0os0XxUDvw/E-Commerce-Website?m=auto&t=BIUcK9eezGqSoGdK-6" title="E-Commerce Website" target="_blank" rel="noopener noreferrer">
+                        <img src="E-Comm Image.png" alt="E-Commerce Website - Web Design" loading="lazy">
                     </a>
                 </div>
                 <div class="project-info">
                     <div class="project-tag">WEB DESIGN</div>
                     <h3>E-Commerce Website UI Design</h3>
-                    <p>An e-commerce UI is the interface where users browse, select, and buy products online. It's designed for usability, conversion, and great user experience.</p>
+                    <p>Professional e-commerce interface optimized for user experience, product discovery, and conversion with intuitive navigation and secure checkout.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="service">
-        <h2 class="section-title">Our Service</h2>
+        <h2 class="section-title">My Services</h2>
         <div class="services-grid">
             <div class="service-card">
-                <div class="service-icon">
-                    <img src="Service logo1.png" alt="Web Design">  
-                </div>
+                <div class="service-icon"><img src="Service logo1.png" alt="Web Design"></div>
                 <h3>Web Design</h3>
+                <p>Creating responsive and visually stunning websites that deliver excellent user experiences across all devices.</p>
             </div>
             <div class="service-card">
-                <div class="service-icon">
-                    <img src="Service logo2.png" alt="Product Design">  
-                </div>
+                <div class="service-icon"><img src="Service logo2.png" alt="Product Design"></div>
                 <h3>Product Design</h3>
+                <p>Designing comprehensive digital products that solve real user problems with intuitive interfaces and thoughtful interactions.</p>
             </div>
             <div class="service-card">
-                <div class="service-icon">
-                    <img src="Service logo3.png" alt="App Design">  
-                </div>
+                <div class="service-icon"><img src="Service logo3.png" alt="App Design"></div>
                 <h3>App Design</h3>
+                <p>Developing mobile and desktop applications with focus on usability, aesthetics, and seamless user journeys.</p>
             </div>
             <div class="service-card">
-                <div class="service-icon">
-                    <img src="Service logo4.png" alt="Logo and Branding">  
-                </div>
+                <div class="service-icon"><img src="Service logo4.png" alt="Logo and Branding"></div>
                 <h3>Logo and Branding</h3>
+                <p>Creating distinctive brand identities and logos that reflect your company's values and resonate with your audience.</p>
             </div>
         </div>
     </section>
 
     <section id="contact" class="contact">
         <h2>Let's Work Together</h2>
-        <p>I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, feel free to reach out!</p>
-        <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=DmwnWrRvwLtLfPXMkfNqpKSNFfVRmKgXtdstZlHQtXZtZXXbwmJPRxKRgjhdpfGvqlVgZCbgRhVb" class="contact-btn">madhankumar6304@gmail.com</a>
+        <p>I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, feel free to reach out and let's create something amazing together!</p>
+        
+        <a href="mailto:madhankumar6304@gmail.com" class="email-btn mobile-only">
+         madhankumar6304@gmail.com
+</a>
+
+<!-- Secondary button (Gmail compose web) -->
+<a href="https://mail.google.com/mail/u/0/?ui=2&view=cm&tf=1&to=madhankumar6304@gmail.com" 
+   target="_blank" 
+   class="gmail-btn desktop-only">
+         madhankumar6304@gmail.com
+</a>
         <div class="social-links">
-            <a href="https://www.linkedin.com/in/madhankumar-m-40035b250/" title="LinkedIn">
-                <img src="Linkedin Logo.png" alt="LinkedIn">
-            </a>
-            <a href="https://www.behance.net/madhankumarm7" title="Behance">
-                <img src="Behance Logo.png" alt="Behance">
-            </a>
+            <a href="https://www.linkedin.com/in/madhankumar-m-40035b250/" title="LinkedIn" ><img src="Linkedin Logo.png" alt="LinkedIn"></a>
+            <a href="https://www.behance.net/madhankumarm7" title="Behance" ><img src="Behance Logo.png" alt="Behance"></a>
         </div>
     </section>
 
-    <footer>
-        <p>© 2025 Portfolio</p>
-    </footer>
+    
 
-    <!-- Scroll to Top Button -->
     <button id="scrollTopBtn" aria-label="Scroll to top" title="Back to top">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
-             viewBox="0 0 24 24" fill="none" stroke="currentColor"
-             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="m5 12 7-7 7 7"></path>
             <path d="M12 19V5"></path>
         </svg>
     </button>
-
 
     <script>
         // Smooth scrolling
@@ -1038,15 +1071,14 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
+                    // Close mobile menu after clicking
+                    const menuToggle = document.getElementById('menuToggle');
+                    const navLinks = document.getElementById('navLinks');
+                    menuToggle.classList.remove('active');
+                    navLinks.classList.remove('active');
                 }
             });
         });
-
-        // Add scroll animation to elements
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
 
         // Scroll-to-top button behavior
         const scrollBtn = document.getElementById("scrollTopBtn");
@@ -1065,6 +1097,12 @@
             });
         });
 
+        // Intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1074,31 +1112,26 @@
         }, observerOptions);
 
         document.querySelectorAll('.skill-card, .project-card, .service-card').forEach(el => {
-            el.style.opacity = '0';
             observer.observe(el);
         });
 
+        // Mobile menu toggle
         const menuToggle = document.getElementById('menuToggle');
-        const navlinks = document.getElementById('navLinks');
+        const navLinks = document.getElementById('navLinks');
 
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('active');
             navLinks.classList.toggle('active');
         });
 
-        const hamburger = document.getElementById("hamburger");
-        const navLinks = document.getElementById("navLinks");
-        hamburger.addEventListener("click", () => {
-            navLinks.classList.toggle("active");
-            hamburger.classList.toggle("active");
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('nav')) {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
         });
-
     </script>
-    
+
 </body>
 </html>
-
-
-
-
-
